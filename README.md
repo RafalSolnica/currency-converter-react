@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# Rafał Solnica - Currency converter
+
+![Money](./src/images/README_background.png)
+
+Welcome to my simple currency converter that I've made as a homework during YouCode front-end course.
+
+## For the first time I used in this project:
+
+- JavaScript functions
+- simple form validation
+- icon designed by me with the help of Canva website: https://www.canva.com/
+
+## Demo
+
+## https://rafalsolnica.github.io/currency-converter/
+
+## How does it work?
+
+In the first field choose starting currency, in second enter the amount, and then in the third select currency you want to convert into. Next click "Przelicz" button and result should show under the form.
+
+![Money](./src/images/example.gif)
+
+In case of not stating any amount of currency the field will highlight itself signaling error. The error will go away once correct value gets be entered or the form gets cleared with the "Wyczyść" button.
+
+![Money](./src/images/example_error.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,11 +37,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
