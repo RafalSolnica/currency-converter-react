@@ -12,7 +12,7 @@ Welcome to my simple currency converter that I've made as a homework during YouC
 
 ## Demo
 
-## https://rafalsolnica.github.io/currency-converter/
+## https://rafalsolnica.github.io/currency-converter-react/
 
 ## How does it work?
 
@@ -23,6 +23,12 @@ In the first field choose starting currency, in second enter the amount, and the
 In case of not stating any amount of currency the field will highlight itself signaling error. The error will go away once correct value gets be entered or the form gets cleared with the "Wyczyść" button.
 
 ![Money](./src/images/example_error.gif)
+
+### Technologies used in this project:
+
+- HTML, BEM convention
+- CSS, normalize.css, flexbox, CSS Grid
+- JavaScript ES6+ features, React, React-DOM, Babel
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
