@@ -6,7 +6,7 @@
 }
 
 .form__fieldset {
-  padding: 0 5%;
+  padding: 20px 5%;
   border: 1px solid #666;
   box-shadow: inset 1px 1px 8px #aaa;
   border-radius: 10px;
@@ -20,16 +20,12 @@
 }
 
 .form__label {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: right;
   user-select: none;
-}
-
-.form__text {
-  display: inline-block;
-  width: 130px;
-  margin: 0 10px;
+  margin: 10px 0;
 }
 
 .form__field {
@@ -59,14 +55,10 @@
   cursor: pointer;
 }
 
-.form__field--select > .form__option:nth-child(even) {
-  background-color: #555;
-}
-
 .form__option {
   font-weight: bold;
 }
 
-.form__required {
-  color: red;
+.form__option:nth-child(even) {
+  background-color: #555;
 }
