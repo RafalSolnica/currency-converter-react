@@ -34,14 +34,16 @@ const Form = () => {
     event.preventDefault();
 
     if (amount <= 0) {
+      setHideResult(true);
       setError(true);
       return;
     }
 
     setResultProps({
       value: (
-        amount *
-        currencies.find((currency) => currency.name === initialCurrency).value *
+        (amount *
+          currencies.find((currency) => currency.name === initialCurrency)
+            .value) /
         currencies.find((currency) => currency.name === convertedCurrency).value
       ).toFixed(2),
       currency: convertedCurrency,
@@ -71,8 +73,11 @@ const Form = () => {
           content={
             <input
               type="number"
+              min="1"
+              max="999999999999"
+              step="0.01"
+              required
               className={`form__field ${error ? "form__field--error" : ""}`}
-              inputMode="numeric"
               amount={amount}
               onChange={({ target }) => handleInput({ target })}
             />
