@@ -22,7 +22,7 @@ const Form = () => {
   const [amount, setAmount] = useState(0);
   const [convertedCurrency, setConvertedCurrency] = useState("PLN");
   const [hideResult, setHideResult] = useState(true);
-  const [resultProps, setResultProps] = useState({ value: 0, currency: "PLN" });
+  const [resultValue, setResultValue] = useState(0);
 
   const handleInput = ({ target }) => {
     setAmount(target.value);
@@ -31,15 +31,14 @@ const Form = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    setResultProps({
-      value: (
+    setResultValue(
+      (
         (amount *
           currencies.find((currency) => currency.name === initialCurrency)
             .value) /
         currencies.find((currency) => currency.name === convertedCurrency).value
-      ).toFixed(2),
-      currency: convertedCurrency,
-    });
+      ).toFixed(2)
+    );
 
     setHideResult(false);
   };
@@ -86,7 +85,11 @@ const Form = () => {
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
       </fieldset>
-      <Result hideResult={hideResult} resultProps={resultProps} />
+      <Result
+        hideResult={hideResult}
+        resultValue={resultValue}
+        convertedCurrency={convertedCurrency}
+      />
     </form>
   );
 };
