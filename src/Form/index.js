@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Buttons from "../Buttons";
 import Label from "../Label";
 import Select from "../Select";
+import Result from "../Result";
 import "./style.css";
 
 const currencies = [
@@ -16,32 +18,60 @@ const currencies = [
 ];
 
 const Form = () => {
+  const [initialCurrency, setInitCurrency] = useState("PLN");
+  const [amount, setAmount] = useState(0);
+  const [convertedCurrency, setConvertedCurrency] = useState("PLN");
+  const [hideResult, setHideResult] = useState(true);
+  const [error, setError] = useState(false);
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(initialCurrency, amount, convertedCurrency);
+    if (amount <= 0) {
+    }
+    setHideResult(!hideResult);
+  };
+
+  const resetForm = () => {
+    setAmount(0);
+    console.log("Reset");
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
         <legend className="form__legend">Kantor walut</legend>
 
         <Label
           text="Wybierz walutę"
-          content={<Select currencies={currencies} />}
+          content={<Select currencies={currencies} method={setInitCurrency} />}
         />
 
         <Label
           text="Podaj wartość*"
           content={
-            <input type="number" className="form__field" inputMode="numeric" />
+            <input
+              type="number"
+              className="form__field"
+              inputMode="numeric"
+              amount={amount}
+              onChange={({ target }) => setAmount(target.value)}
+            />
           }
         />
 
         <Label
           text="Wybierz walutę"
-          content={<Select currencies={currencies} />}
+          content={
+            <Select currencies={currencies} method={setConvertedCurrency} />
+          }
         />
 
-        <Buttons />
+        <Buttons resetForm={resetForm} />
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
       </fieldset>
+      <Result hideResult={hideResult} />
     </form>
   );
 };

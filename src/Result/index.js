@@ -1,9 +1,11 @@
 import "./style.css";
 
-const Result = () => {
+const Result = ({ hideResult }) => {
   return (
     <p>
-      <strong className="result result--hidden "></strong>
+      <strong className={`result ${hideResult ? "result--hidden" : ""}`}>
+        Test
+      </strong>
     </p>
   );
 };
