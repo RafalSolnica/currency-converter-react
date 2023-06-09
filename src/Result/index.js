@@ -1,10 +1,10 @@
 import "./style.css";
 
-const Result = ({ hideResult }) => {
+const Result = ({ hideResult, resultProps }) => {
   return (
     <p>
       <strong className={`result ${hideResult ? "result--hidden" : ""}`}>
-        Test
+        Przeliczona wartość wynosi: {resultProps.value} {resultProps.currency}
       </strong>
     </p>
   );

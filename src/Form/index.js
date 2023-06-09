@@ -5,38 +5,55 @@ import Select from "../Select";
 import Result from "../Result";
 import "./style.css";
 
-const currencies = [
-  { id: 1, name: "PLN", value: 1 },
-  { id: 2, name: "USD", value: 4.42 },
-  { id: 3, name: "EUR", value: 4.7 },
-  { id: 4, name: "GBP", value: 5.33 },
-  { id: 5, name: "CNY", value: 0.64 },
-  { id: 6, name: "AUD", value: 2.94 },
-  { id: 7, name: "CAD", value: 3.22 },
-  { id: 8, name: "CHF", value: 4.78 },
-  { id: 9, name: "JPY", value: 0.033 },
-];
-
 const Form = () => {
+  const currencies = [
+    { id: 1, name: "PLN", value: 1 },
+    { id: 2, name: "USD", value: 4.42 },
+    { id: 3, name: "EUR", value: 4.7 },
+    { id: 4, name: "GBP", value: 5.33 },
+    { id: 5, name: "CNY", value: 0.64 },
+    { id: 6, name: "AUD", value: 2.94 },
+    { id: 7, name: "CAD", value: 3.22 },
+    { id: 8, name: "CHF", value: 4.78 },
+    { id: 9, name: "JPY", value: 0.033 },
+  ];
+
   const [initialCurrency, setInitCurrency] = useState("PLN");
   const [amount, setAmount] = useState(0);
   const [convertedCurrency, setConvertedCurrency] = useState("PLN");
   const [hideResult, setHideResult] = useState(true);
   const [error, setError] = useState(false);
+  const [resultProps, setResultProps] = useState({ value: 0, currency: "PLN" });
+
+  const handleInput = ({ target }) => {
+    setAmount(target.value);
+    if (amount >= 0) setError(false);
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(initialCurrency, amount, convertedCurrency);
+
     if (amount <= 0) {
       setError(true);
+      return;
     }
-    setHideResult(!hideResult);
+
+    setResultProps({
+      value: (
+        amount *
+        currencies.find((currency) => currency.name === initialCurrency).value *
+        currencies.find((currency) => currency.name === convertedCurrency).value
+      ).toFixed(2),
+      currency: convertedCurrency,
+    });
+
+    setHideResult(false);
   };
 
   const resetForm = () => {
     setAmount(0);
     setError(false);
-    console.log("Reset");
+    setHideResult(true);
   };
 
   return (
@@ -57,7 +74,7 @@ const Form = () => {
               className={`form__field ${error ? "form__field--error" : ""}`}
               inputMode="numeric"
               amount={amount}
-              onChange={({ target }) => setAmount(target.value)}
+              onChange={({ target }) => handleInput({ target })}
             />
           }
         />
@@ -73,7 +90,7 @@ const Form = () => {
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
       </fieldset>
-      <Result hideResult={hideResult} />
+      <Result hideResult={hideResult} resultProps={resultProps} />
     </form>
   );
 };
