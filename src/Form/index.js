@@ -28,12 +28,14 @@ const Form = () => {
     event.preventDefault();
     console.log(initialCurrency, amount, convertedCurrency);
     if (amount <= 0) {
+      setError(true);
     }
     setHideResult(!hideResult);
   };
 
   const resetForm = () => {
     setAmount(0);
+    setError(false);
     console.log("Reset");
   };
 
@@ -52,7 +54,7 @@ const Form = () => {
           content={
             <input
               type="number"
-              className="form__field"
+              className={`form__field ${error ? "form__field--error" : ""}`}
               inputMode="numeric"
               amount={amount}
               onChange={({ target }) => setAmount(target.value)}
