@@ -20,7 +20,7 @@ const Form = () => {
 
   const [initialCurrency, setInitCurrency] = useState("PLN");
   const [amount, setAmount] = useState(0);
-  const [convertedCurrency, setConvertedCurrency] = useState("PLN");
+  const [convertedCurrency, setConvertedCurrency] = useState("USD");
   const [hideResult, setHideResult] = useState(true);
   const [resultValue, setResultValue] = useState(0);
 
@@ -55,7 +55,13 @@ const Form = () => {
 
         <Label
           text="Wybierz walutę"
-          content={<Select currencies={currencies} method={setInitCurrency} />}
+          content={
+            <Select
+              currencies={currencies}
+              selectedCurrency={initialCurrency}
+              method={setInitCurrency}
+            />
+          }
         />
 
         <Label
@@ -77,7 +83,11 @@ const Form = () => {
         <Label
           text="Wybierz walutę"
           content={
-            <Select currencies={currencies} method={setConvertedCurrency} />
+            <Select
+              currencies={currencies}
+              selectedCurrency={convertedCurrency}
+              method={setConvertedCurrency}
+            />
           }
         />
 
