@@ -1,5 +1,3 @@
-import "./style.css";
-
 const Select = ({ currencies, selectedCurrency, method }) => {
   return (
     <select
