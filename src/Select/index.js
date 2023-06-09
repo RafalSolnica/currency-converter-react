@@ -1,8 +1,11 @@
 import "./style.css";
 
-const Select = ({ currencies }) => {
+const Select = ({ currencies, method }) => {
   return (
-    <select className="form__field form__field--select">
+    <select
+      className="form__field form__field--select"
+      onChange={({ target }) => method(target.value)}
+    >
       {currencies.map((currency) => {
         return (
           <option key={currency.id} className="form__option">
