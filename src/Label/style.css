@@ -20,11 +20,3 @@
 .form__field:focus {
   outline: 1px solid #fff;
 }
-
-.form__field--error {
-  border: 1px solid red;
-}
-
-.form__field--error:focus {
-  outline: 1px solid red;
-}

@@ -22,12 +22,10 @@ const Form = () => {
   const [amount, setAmount] = useState(0);
   const [convertedCurrency, setConvertedCurrency] = useState("PLN");
   const [hideResult, setHideResult] = useState(true);
-  const [error, setError] = useState(false);
   const [resultProps, setResultProps] = useState({ value: 0, currency: "PLN" });
 
   const handleInput = ({ target }) => {
     setAmount(target.value);
-    if (amount >= 0) setError(false);
   };
 
   const onFormSubmit = (event) => {
@@ -35,7 +33,6 @@ const Form = () => {
 
     if (amount <= 0) {
       setHideResult(true);
-      setError(true);
       return;
     }
 
@@ -54,7 +51,6 @@ const Form = () => {
 
   const resetForm = () => {
     setAmount(0);
-    setError(false);
     setHideResult(true);
   };
 
@@ -77,7 +73,7 @@ const Form = () => {
               max="999999999999"
               step="0.01"
               required
-              className={`form__field ${error ? "form__field--error" : ""}`}
+              className="form__field"
               amount={amount}
               onChange={({ target }) => handleInput({ target })}
             />
