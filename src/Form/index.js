@@ -31,11 +31,6 @@ const Form = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    if (amount <= 0) {
-      setHideResult(true);
-      return;
-    }
-
     setResultProps({
       value: (
         (amount *
