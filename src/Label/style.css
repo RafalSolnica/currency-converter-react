@@ -3,6 +3,5 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   text-align: right;
-  user-select: none;
-  margin: 10px 0;
+  margin: 15px 0;
 }
