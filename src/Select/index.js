@@ -1,4 +1,6 @@
-const Select = ({ currencies, selectedCurrency, method }) => {
+import { currencies } from "../currencies";
+
+const Select = ({ selectedCurrency, method }) => {
   return (
     <select
       className="form__field form__field--select"
