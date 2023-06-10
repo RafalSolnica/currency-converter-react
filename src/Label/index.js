@@ -1,6 +1,8 @@
+import "./style.css";
+
 const Label = ({ text, content }) => {
   return (
-    <label className="form__label">
+    <label className="label">
       <span>{text}</span>
       {content}
     </label>

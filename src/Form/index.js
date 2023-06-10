@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Buttons from "../Buttons";
 import Label from "../Label";
 import Select from "../Select";
@@ -63,7 +62,7 @@ const Form = ({
               max="999999999999"
               step="0.01"
               required
-              className="form__field"
+              className="label__input"
               amount={amount}
               onChange={({ target }) => handleInput({ target })}
             />

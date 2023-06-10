@@ -1,15 +1,16 @@
 import { currencies } from "../currencies";
+import "./style.css";
 
 const Select = ({ selectedCurrency, method }) => {
   return (
     <select
-      className="form__field form__field--select"
+      className="label__input select"
       onChange={({ target }) => method(target.value)}
       value={selectedCurrency}
     >
       {currencies.map((currency) => {
         return (
-          <option key={currency.id} className="form__option">
+          <option key={currency.id} className="select__option">
             {currency.name}
           </option>
         );
