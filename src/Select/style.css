@@ -1,0 +1,11 @@
+.select {
+  cursor: pointer;
+}
+
+.fselect__option {
+  font-weight: bold;
+}
+
+.select__option:nth-child(even) {
+  background-color: #555;
+}
