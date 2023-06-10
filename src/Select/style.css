@@ -1,8 +1,15 @@
 .select {
   cursor: pointer;
+  width: 130px;
+  background-color: #444;
+  color: #fff;
+  text-align: right;
+  font-weight: bold;
+  border-radius: 4px;
+  border: 1px solid #fff;
 }
 
-.fselect__option {
+.select__option {
   font-weight: bold;
 }
 

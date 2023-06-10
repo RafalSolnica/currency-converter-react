@@ -4,7 +4,7 @@ import "./style.css";
 const Select = ({ selectedCurrency, method }) => {
   return (
     <select
-      className="label__input select"
+      className="select"
       onChange={({ target }) => method(target.value)}
       value={selectedCurrency}
     >
