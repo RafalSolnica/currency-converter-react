@@ -10,7 +10,7 @@ const Select = ({ selectedCurrency, method }) => {
     >
       {currencies.map((currency) => {
         return (
-          <option key={currency.id} className="select__option">
+          <option key={currency.name} className="select__option">
             {currency.name}
           </option>
         );
