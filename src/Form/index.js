@@ -1,19 +1,18 @@
-import Buttons from "../Buttons";
 import Label from "../Label";
 import Select from "../Select";
+import Buttons from "../Buttons";
+import Result from "../Result";
 import { currencies } from "../currencies";
+import { useState } from "react";
 import "./style.css";
 
-const Form = ({
-  initialCurrency,
-  setInitCurrency,
-  amount,
-  setAmount,
-  convertedCurrency,
-  setConvertedCurrency,
-  setResultValue,
-  setHideResult,
-}) => {
+const Form = () => {
+  const [initialCurrency, setInitCurrency] = useState("PLN");
+  const [amount, setAmount] = useState(0);
+  const [convertedCurrency, setConvertedCurrency] = useState("USD");
+  const [hideResult, setHideResult] = useState(true);
+  const [resultValue, setResultValue] = useState(0);
+
   const handleInput = ({ target }) => {
     setAmount(target.value);
   };
@@ -83,6 +82,12 @@ const Form = ({
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
       </fieldset>
+
+      <Result
+        hideResult={hideResult}
+        resultValue={resultValue}
+        convertedCurrency={convertedCurrency}
+      />
     </form>
   );
 };
