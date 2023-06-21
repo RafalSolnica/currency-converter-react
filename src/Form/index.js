@@ -2,7 +2,7 @@ import Label from "../Label";
 import Select from "../Select";
 import Buttons from "../Buttons";
 import Result from "../Result";
-import CurrentDate from "../CurrentDate";
+import Clock from "../Clock";
 import { currencies } from "../currencies";
 import { useState } from "react";
 import "./style.css";
@@ -42,7 +42,7 @@ const Form = () => {
     <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
         <legend className="form__legend">Kantor walut</legend>
-        <CurrentDate />
+        <Clock />
 
         <Label
           text="Wybierz walutę"
