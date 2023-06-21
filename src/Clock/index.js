@@ -15,9 +15,9 @@ const Clock = () => {
   }, []);
 
   return (
-    <p className="clock">
+    <div className="clock">
       Dzisiaj jest{" "}
-      {myDate.toLocaleString("pl-pl", {
+      {myDate.toLocaleString(undefined, {
         weekday: "long",
         day: "numeric",
         month: "long",
@@ -26,7 +26,7 @@ const Clock = () => {
         minute: "numeric",
         second: "numeric",
       })}
-    </p>
+    </div>
   );
 };
 
