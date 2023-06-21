@@ -12,10 +12,10 @@ const Clock = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [myDate]);
+  }, []);
 
   return (
-    <p className="date">
+    <p className="clock">
       Dzisiaj jest{" "}
       {myDate.toLocaleString("pl-pl", {
         weekday: "long",
