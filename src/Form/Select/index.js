@@ -1,4 +1,4 @@
-import { currencies } from "../currencies";
+import { currencies } from "../../currencies";
 import { StyledSelect, Option } from "./styled";
 
 const Select = ({ selectedCurrency, method }) => {

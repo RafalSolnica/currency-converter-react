@@ -1,5 +1,5 @@
 import Label from "./Label";
-import Select from "../Select";
+import Select from "./Select";
 import Buttons from "../Buttons";
 import Result from "./Result";
 import Clock from "./Clock";
