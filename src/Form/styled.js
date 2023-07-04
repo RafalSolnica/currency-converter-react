@@ -22,6 +22,7 @@ export const Legend = styled.legend`
 `;
 
 export const Input = styled.input`
+  cursor: pointer;
   width: 130px;
   background-color: #444;
   color: #fff;

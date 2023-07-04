@@ -1,11 +1,11 @@
-import Label from "../Label";
+import Label from "./Label";
 import Select from "../Select";
 import Buttons from "../Buttons";
-import Result from "../Result";
-import Clock from "../Clock";
+import Result from "./Result";
+import Clock from "./Clock";
 import { currencies } from "../currencies";
 import { useState } from "react";
-import { StyledForm, fieldset, Legend, Input, Fieldset } from "./styled";
+import { StyledForm, Fieldset, Legend, Input } from "./styled";
 
 const Form = () => {
   const [initialCurrency, setInitCurrency] = useState("PLN");
