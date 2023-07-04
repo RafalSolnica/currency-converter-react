@@ -1,11 +1,11 @@
-import "./style.css";
+import { StyledResult } from "./styled";
 
 const Result = ({ hideResult, resultValue, convertedCurrency }) => {
   return (
     <p>
-      <strong className={`result ${hideResult ? "result--hidden" : ""}`}>
+      <StyledResult $hideResult={hideResult}>
         Przeliczona wartość wynosi: {resultValue} {convertedCurrency}
-      </strong>
+      </StyledResult>
     </p>
   );
 };
