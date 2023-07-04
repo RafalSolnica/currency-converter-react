@@ -1,21 +1,16 @@
 import { currencies } from "../currencies";
-import "./style.css";
+import { StyledSelect, Option } from "./styled";
 
 const Select = ({ selectedCurrency, method }) => {
   return (
-    <select
-      className="select"
+    <StyledSelect
       onChange={({ target }) => method(target.value)}
       value={selectedCurrency}
     >
       {currencies.map((currency) => {
-        return (
-          <option key={currency.name} className="select__option">
-            {currency.name}
-          </option>
-        );
+        return <Option key={currency.name}>{currency.name}</Option>;
       })}
-    </select>
+    </StyledSelect>
   );
 };
 

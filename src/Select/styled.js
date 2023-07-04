@@ -1,4 +1,6 @@
-.select {
+import { styled } from "styled-components";
+
+export const StyledSelect = styled.select`
   cursor: pointer;
   width: 130px;
   background-color: #444;
@@ -7,12 +9,12 @@
   font-weight: bold;
   border-radius: 4px;
   border: 1px solid #fff;
-}
+`;
 
-.select__option {
+export const Option = styled.option`
   font-weight: bold;
-}
 
-.select__option:nth-child(even) {
-  background-color: #555;
-}
+  &:nth-child(even) {
+    background-color: #555;
+  }
+`;
