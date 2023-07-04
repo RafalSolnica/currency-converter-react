@@ -5,7 +5,7 @@ import Result from "../Result";
 import Clock from "../Clock";
 import { currencies } from "../currencies";
 import { useState } from "react";
-import "./style.css";
+import { StyledForm, fieldset, Legend, Input, Fieldset } from "./styled";
 
 const Form = () => {
   const [initialCurrency, setInitCurrency] = useState("PLN");
@@ -39,9 +39,9 @@ const Form = () => {
   };
 
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <fieldset className="form__fieldset">
-        <legend className="form__legend">Kantor walut</legend>
+    <StyledForm onSubmit={onFormSubmit}>
+      <Fieldset>
+        <Legend>Kantor walut</Legend>
         <Clock />
 
         <Label
@@ -57,14 +57,13 @@ const Form = () => {
         <Label
           text="Podaj wartość*"
           content={
-            <input
+            <Input
               type="number"
               min="1"
               max="999999999999"
               step="0.01"
               required
-              className="label__input"
-              amount={amount}
+              $amount={amount}
               onChange={({ target }) => handleInput({ target })}
             />
           }
@@ -83,14 +82,14 @@ const Form = () => {
         <Buttons resetForm={resetForm} />
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
-      </fieldset>
+      </Fieldset>
 
       <Result
         hideResult={hideResult}
         resultValue={resultValue}
         convertedCurrency={convertedCurrency}
       />
-    </form>
+    </StyledForm>
   );
 };
 
