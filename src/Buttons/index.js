@@ -1,17 +1,13 @@
-import "./style.css";
+import { ButtonsContainer, Button } from "./styled";
 
 const Buttons = ({ resetForm }) => {
   return (
-    <div className="buttons">
-      <button className="buttons__button">Przelicz</button>
-      <button
-        className="buttons__button"
-        type="reset"
-        onClick={() => resetForm()}
-      >
+    <ButtonsContainer>
+      <Button>Przelicz</Button>
+      <Button type="reset" onClick={() => resetForm()}>
         Wyczyść
-      </button>
-    </div>
+      </Button>
+    </ButtonsContainer>
   );
 };
 

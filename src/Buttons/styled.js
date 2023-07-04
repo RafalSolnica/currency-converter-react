@@ -1,11 +1,13 @@
-.buttons {
+import { styled } from "styled-components";
+
+export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   user-select: none;
   margin: 10px 0 30px;
-}
+`;
 
-.buttons__button {
+export const Button = styled.button`
   background-color: #333;
   color: #ccc;
   box-shadow: inset 1px 1px 10px #ccc;
@@ -19,15 +21,15 @@
   user-select: none;
   font-size: 20px;
   transition: 0.5s;
-}
 
-.buttons__button:hover {
-  background-color: #666;
-  color: #fff;
-  box-shadow: inset 1px 1px 10px #fff;
-}
+  &:hover {
+    background-color: #666;
+    color: #fff;
+    box-shadow: inset 1px 1px 10px #fff;
+  }
 
-.buttons__button:focus {
-  border: none;
-  outline: 1px solid #fff;
-}
+  &:focus {
+    border: none;
+    outline: 1px solid #fff;
+  }
+`;
