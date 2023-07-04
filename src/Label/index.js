@@ -1,11 +1,11 @@
-import "./style.css";
+import { StyledLabel } from "./styled";
 
 const Label = ({ text, content }) => {
   return (
-    <label className="label">
+    <StyledLabel className="label">
       <span>{text}</span>
       {content}
-    </label>
+    </StyledLabel>
   );
 };
 
