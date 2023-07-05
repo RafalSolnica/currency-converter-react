@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: url("${background}");
+    font-size:18px;
   }
 
   input[type="number"]::-webkit-inner-spin-button {
