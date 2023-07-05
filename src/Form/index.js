@@ -48,8 +48,8 @@ const Form = () => {
           text="Wybierz walutę"
           content={
             <Select
-              selectedCurrency={initialCurrency}
-              method={setInitCurrency}
+              $selectedCurrency={initialCurrency}
+              $method={setInitCurrency}
             />
           }
         />
@@ -58,6 +58,7 @@ const Form = () => {
           text="Podaj wartość*"
           content={
             <Input
+              as="input"
               type="number"
               min="1"
               max="999999999999"
@@ -73,8 +74,8 @@ const Form = () => {
           text="Wybierz walutę"
           content={
             <Select
-              selectedCurrency={convertedCurrency}
-              method={setConvertedCurrency}
+              $selectedCurrency={convertedCurrency}
+              $method={setConvertedCurrency}
             />
           }
         />
