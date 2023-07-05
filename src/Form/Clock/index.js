@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { StyledClock } from "./styled";
+import { Wrapper } from "./styled";
 
 const formatDate = (date) =>
   date.toLocaleString(undefined, {
@@ -25,7 +25,7 @@ const Clock = () => {
     };
   }, []);
 
-  return <StyledClock>Dzisiaj jest {formatDate(myDate)}</StyledClock>;
+  return <Wrapper>Dzisiaj jest {formatDate(myDate)}</Wrapper>;
 };
 
 export default Clock;
