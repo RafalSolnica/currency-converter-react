@@ -36,8 +36,11 @@ const Form = () => {
     setHideResult(false);
   };
 
-  const resetForm = () => {
+  const resetForm = (event) => {
+    event.preventDefault();
     setAmount("");
+    setInitCurrency("PLN");
+    setConvertedCurrency("USD");
     setHideResult(true);
   };
 
@@ -77,6 +80,7 @@ const Form = () => {
           <Field
             as="select"
             value={convertedCurrency}
+            $defaultValue="USD"
             onChange={({ target }) => setConvertedCurrency(target.value)}
           >
             {currencies.map((currency) => (
@@ -87,9 +91,7 @@ const Form = () => {
 
         <Wrapper>
           <Button>Przelicz</Button>
-          <Button type="reset" onClick={() => resetForm()}>
-            Wyczyść
-          </Button>
+          <Button onClick={resetForm}>Wyczyść</Button>
         </Wrapper>
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
