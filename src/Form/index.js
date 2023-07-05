@@ -1,22 +1,25 @@
-import Label from "./Label";
-import Select from "./Select";
-import Buttons from "./Buttons";
 import Result from "./Result";
 import Clock from "./Clock";
 import { currencies } from "../currencies";
 import { useState } from "react";
-import { StyledForm, Fieldset, Legend, Input } from "./styled";
+import {
+  StyledForm,
+  Fieldset,
+  Legend,
+  StyledLabel,
+  LabelText,
+  Field,
+  Option,
+  Wrapper,
+  Button,
+} from "./styled";
 
 const Form = () => {
   const [initialCurrency, setInitCurrency] = useState("PLN");
-  const [amount, setAmount] = useState(0);
   const [convertedCurrency, setConvertedCurrency] = useState("USD");
+  const [amount, setAmount] = useState("");
   const [hideResult, setHideResult] = useState(true);
   const [resultValue, setResultValue] = useState(0);
-
-  const handleInput = ({ target }) => {
-    setAmount(target.value);
-  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +37,7 @@ const Form = () => {
   };
 
   const resetForm = () => {
-    setAmount(0);
+    setAmount("");
     setHideResult(true);
   };
 
@@ -44,43 +47,50 @@ const Form = () => {
         <Legend>Kantor walut</Legend>
         <Clock />
 
-        <Label
-          text="Wybierz walutę"
-          content={
-            <Select
-              $selectedCurrency={initialCurrency}
-              $method={setInitCurrency}
-            />
-          }
-        />
+        <StyledLabel>
+          <LabelText>Wybierz walutę</LabelText>
+          <Field
+            as="select"
+            value={initialCurrency}
+            onChange={({ target }) => setInitCurrency(target.value)}
+          >
+            {currencies.map((currency) => (
+              <Option key={currency.name}>{currency.name}</Option>
+            ))}
+          </Field>
+        </StyledLabel>
 
-        <Label
-          text="Podaj wartość*"
-          content={
-            <Input
-              as="input"
-              type="number"
-              min="1"
-              max="999999999999"
-              step="0.01"
-              required
-              $amount={amount}
-              onChange={({ target }) => handleInput({ target })}
-            />
-          }
-        />
+        <StyledLabel>
+          <LabelText>Podaj wartość*</LabelText>
+          <Field
+            value={amount}
+            onChange={({ target }) => setAmount(target.value)}
+            placeholder="Wpisz kwotę"
+            type="number"
+            required
+            step="0.01"
+          />
+        </StyledLabel>
 
-        <Label
-          text="Wybierz walutę"
-          content={
-            <Select
-              $selectedCurrency={convertedCurrency}
-              $method={setConvertedCurrency}
-            />
-          }
-        />
+        <StyledLabel>
+          <LabelText>Wybierz walutę</LabelText>
+          <Field
+            as="select"
+            value={convertedCurrency}
+            onChange={({ target }) => setConvertedCurrency(target.value)}
+          >
+            {currencies.map((currency) => (
+              <Option key={currency.name}>{currency.name}</Option>
+            ))}
+          </Field>
+        </StyledLabel>
 
-        <Buttons resetForm={resetForm} />
+        <Wrapper>
+          <Button>Przelicz</Button>
+          <Button type="reset" onClick={() => resetForm()}>
+            Wyczyść
+          </Button>
+        </Wrapper>
 
         <span>Pola oznaczone symbolem * są wymagane.</span>
       </Fieldset>

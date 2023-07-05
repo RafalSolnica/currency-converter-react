@@ -21,17 +21,71 @@ export const Legend = styled.legend`
   font-weight: bold;
 `;
 
-export const Input = styled.input`
+export const StyledLabel = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: right;
+  margin: 15px 0;
+`;
+
+export const LabelText = styled.span`
+  width: 130px;
+`;
+
+export const Field = styled.input`
+  padding: 2px 5px;
   cursor: pointer;
   width: 130px;
   background-color: ${({ theme }) => theme.color.tundora};
   color: ${({ theme }) => theme.color.white};
   text-align: right;
-  font-weight: bold;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.color.white};
 
   &:focus {
+    outline: 1px solid ${({ theme }) => theme.color.white};
+  }
+`;
+
+export const Option = styled.option`
+  &:nth-child(even) {
+    background-color: ${({ theme }) => theme.color.emperor};
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  user-select: none;
+  margin: 30px;
+`;
+
+export const Button = styled.button`
+  background-color: #333;
+  color: ${({ theme }) => theme.color.silver};
+  box-shadow: inset 1px 1px 10px ${({ theme }) => theme.color.silver};
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  min-width: 130px;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  font-size: 20px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.doveGrey};
+    color: ${({ theme }) => theme.color.white};
+    box-shadow: inset 1px 1px 10px ${({ theme }) => theme.color.white};
+  }
+
+  &:focus {
+    border: none;
     outline: 1px solid ${({ theme }) => theme.color.white};
   }
 `;
