@@ -1,12 +1,10 @@
-import { StyledResult } from "./styled";
+import { Wrapper } from "./styled";
 
 const Result = ({ hideResult, resultValue, convertedCurrency }) => {
   return (
-    <p>
-      <StyledResult $hideResult={hideResult}>
-        Przeliczona wartość wynosi: {resultValue} {convertedCurrency}
-      </StyledResult>
-    </p>
+    <Wrapper $hideResult={hideResult}>
+      Przeliczona wartość wynosi: {resultValue} {convertedCurrency}
+    </Wrapper>
   );
 };
 
