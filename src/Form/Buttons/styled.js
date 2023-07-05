@@ -9,8 +9,8 @@ export const ButtonsContainer = styled.div`
 
 export const Button = styled.button`
   background-color: #333;
-  color: #ccc;
-  box-shadow: inset 1px 1px 10px #ccc;
+  color: ${({ theme }) => theme.color.silver};
+  box-shadow: inset 1px 1px 10px ${({ theme }) => theme.color.silver};
   padding: 10px;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -23,13 +23,13 @@ export const Button = styled.button`
   transition: 0.5s;
 
   &:hover {
-    background-color: #666;
-    color: #fff;
-    box-shadow: inset 1px 1px 10px #fff;
+    background-color: ${({ theme }) => theme.color.doveGrey};
+    color: ${({ theme }) => theme.color.white};
+    box-shadow: inset 1px 1px 10px ${({ theme }) => theme.color.white};
   }
 
   &:focus {
     border: none;
-    outline: 1px solid #fff;
+    outline: 1px solid ${({ theme }) => theme.color.white};
   }
 `;
