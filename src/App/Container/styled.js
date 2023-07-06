@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const StyledContainer = styled.main`
+export const Wrapper = styled.main`
   color: ${({ theme }) => theme.color.silver};
   font-family: "Roboto", sans-serif;
   max-width: 600px;
