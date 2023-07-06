@@ -1,6 +1,6 @@
 import Result from "./Result";
 import Clock from "./Clock";
-import { currencies } from "../currencies";
+import { currencies } from "../../currencies";
 import { useState } from "react";
 import {
   StyledForm,

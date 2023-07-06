@@ -1,9 +1,11 @@
-import { Wrapper } from "./styled";
+import { Wrapper, Text } from "./styled";
 
 const Result = ({ hideResult, resultValue, convertedCurrency }) => {
   return (
     <Wrapper $hideResult={hideResult}>
-      Przeliczona wartość wynosi: {resultValue} {convertedCurrency}
+      <Text>
+        Przeliczona wartość wynosi: {resultValue} {convertedCurrency}
+      </Text>
     </Wrapper>
   );
 };
