@@ -1,13 +1,12 @@
 import Result from "./Result";
 import Clock from "./Clock";
+import Label from "./Label";
 import { currencies } from "../../currencies";
 import { useState } from "react";
 import {
   StyledForm,
   Fieldset,
   Legend,
-  StyledLabel,
-  LabelText,
   Field,
   Option,
   Wrapper,
@@ -50,44 +49,50 @@ const Form = () => {
         <Legend>Kantor walut</Legend>
         <Clock />
 
-        <StyledLabel>
-          <LabelText>Wybierz walutę</LabelText>
-          <Field
-            as="select"
-            value={initialCurrency}
-            onChange={({ target }) => setInitCurrency(target.value)}
-          >
-            {currencies.map((currency) => (
-              <Option key={currency.name}>{currency.name}</Option>
-            ))}
-          </Field>
-        </StyledLabel>
+        <Label
+          text="Wybierz walutę"
+          content={
+            <Field
+              as="select"
+              value={initialCurrency}
+              onChange={({ target }) => setInitCurrency(target.value)}
+            >
+              {currencies.map((currency) => (
+                <Option key={currency.name}>{currency.name}</Option>
+              ))}
+            </Field>
+          }
+        />
 
-        <StyledLabel>
-          <LabelText>Podaj wartość*</LabelText>
-          <Field
-            value={amount}
-            onChange={({ target }) => setAmount(target.value)}
-            placeholder="Wpisz kwotę"
-            type="number"
-            required
-            step="0.01"
-          />
-        </StyledLabel>
+        <Label
+          text="Podaj wartość"
+          content={
+            <Field
+              value={amount}
+              onChange={({ target }) => setAmount(target.value)}
+              placeholder="Wpisz kwotę"
+              type="number"
+              required
+              step="0.01"
+            />
+          }
+        />
 
-        <StyledLabel>
-          <LabelText>Wybierz walutę</LabelText>
-          <Field
-            as="select"
-            value={convertedCurrency}
-            $defaultValue="USD"
-            onChange={({ target }) => setConvertedCurrency(target.value)}
-          >
-            {currencies.map((currency) => (
-              <Option key={currency.name}>{currency.name}</Option>
-            ))}
-          </Field>
-        </StyledLabel>
+        <Label
+          text="Wybierz walutę"
+          content={
+            <Field
+              as="select"
+              value={convertedCurrency}
+              $defaultValue="USD"
+              onChange={({ target }) => setConvertedCurrency(target.value)}
+            >
+              {currencies.map((currency) => (
+                <Option key={currency.name}>{currency.name}</Option>
+              ))}
+            </Field>
+          }
+        />
 
         <Wrapper>
           <Button>Przelicz</Button>
