@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { Wrapper } from "./styled";
+import { useCurrentDate } from "./useCurrentDate";
 
 const formatDate = (date) =>
   date.toLocaleString(undefined, {
@@ -13,19 +13,9 @@ const formatDate = (date) =>
   });
 
 const Clock = () => {
-  const [myDate, setMyDate] = useState(new Date());
+  const date = useCurrentDate();
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setMyDate(() => new Date());
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
-  return <Wrapper>Dzisiaj jest {formatDate(myDate)}</Wrapper>;
+  return <Wrapper>Dzisiaj jest {formatDate(date)}</Wrapper>;
 };
 
 export default Clock;
