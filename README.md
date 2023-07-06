@@ -18,7 +18,10 @@ In the first field choose starting currency, in second enter the amount, and the
 
 - HTML, BEM convention
 - CSS, normalize.css, flexbox, CSS Grid
-- JavaScript ES6+ features, React, React-DOM, Babel
+- JavaScript ES6+ features
+- React, React-DOM, Babel
+- Styled components
+- Custom hooks
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
