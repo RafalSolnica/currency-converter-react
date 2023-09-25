@@ -5,6 +5,4 @@ export const Wrapper = styled.main`
   font-family: "Roboto", sans-serif;
   max-width: 600px;
   margin: 0 auto;
-  display: flex;
-  flex-flow: column;
 `;
