@@ -4,7 +4,6 @@ export const StyledForm = styled.form`
   margin-top: 10px;
   padding: 10px;
   padding-bottom: 0;
-  flex: 1 1 auto;
 `;
 
 export const Fieldset = styled.fieldset`
