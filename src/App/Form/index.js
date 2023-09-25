@@ -11,6 +11,7 @@ import {
   Option,
   Wrapper,
   Button,
+  StyledInfo,
 } from "./styled";
 
 export const Form = () => {
@@ -99,7 +100,7 @@ export const Form = () => {
           <Button onClick={resetForm}>Wyczyść</Button>
         </Wrapper>
 
-        <span>Pola oznaczone symbolem * są wymagane.</span>
+        <StyledInfo>Pola oznaczone symbolem * są wymagane.</StyledInfo>
       </Fieldset>
 
       <Result

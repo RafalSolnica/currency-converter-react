@@ -76,3 +76,7 @@ export const Button = styled.button`
     outline: 1px solid ${({ theme }) => theme.color.white};
   }
 `;
+
+export const StyledInfo = styled.span`
+  font-size: 0.9rem;
+`;
