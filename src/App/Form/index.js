@@ -13,7 +13,7 @@ import {
   Button,
 } from "./styled";
 
-const Form = () => {
+export const Form = () => {
   const [initialCurrency, setInitCurrency] = useState("PLN");
   const [convertedCurrency, setConvertedCurrency] = useState("USD");
   const [amount, setAmount] = useState("");
@@ -110,5 +110,3 @@ const Form = () => {
     </StyledForm>
   );
 };
-
-export default Form;
